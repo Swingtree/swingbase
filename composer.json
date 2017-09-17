@@ -52,5 +52,5 @@
 		"psr-4": {
 		  "Swingbase\\Composer\\": "src/Composer"
 		}
-	},
+	}
 }
