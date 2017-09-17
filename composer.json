@@ -37,12 +37,12 @@
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     },
-	 "extra": {
+	"extra": {
         "installer-paths": {
             "www/core": ["type:drupal-core"],
             "www/libraries/{$name}": ["type:drupal-library"],
             "www/profiles/swingbase/modules/contrib/{$name}": ["type:drupal-module"]
         },
         "patches": {}
-    },
+    }
 }
