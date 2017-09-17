@@ -1,6 +1,6 @@
 <?php
 
-namespace Swingbase\Composer;
+namespace Swingtree\Swingbase\Composer;
 
 
 use Symfony\Component\Filesystem\Filesystem;
