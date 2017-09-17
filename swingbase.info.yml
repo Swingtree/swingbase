@@ -1,0 +1,12 @@
+name: Swingbase
+core: 8.x
+type: profile
+description: 'A basic distribution of drupal 8 that will provide common configuration and our internal deployment managing tool'
+version: '8.x-1.0-dev'
+distribution:
+  name: Swingbase
+dependencies:
+  - config
+themes:
+  - bartik
+  - seven

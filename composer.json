@@ -1,0 +1,48 @@
+{
+    "name": "swingtree/swingbase",
+    "description": "A basic distribution of drupal 8 that will provide common configuration and our internal deployment managing tool",
+    "type": "drupal-profile",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Swingtree",
+            "email": "studio@swingtree.be"
+        }
+    ],
+    "minimum-stability": "dev",
+	"require-dev":{},
+    "require": {
+		"drupal/autologout":"~8.1.0",
+		"drupal-composer/drupal-scaffold": "^2.0.0",
+	},
+	"bin": [
+      "swingbase-subprofile"
+    ],
+    "config": {
+        "bin-dir": "bin/"
+    },
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+	"scripts": {
+        "post-install-cmd": [
+            "@composer drupal-scaffold"
+        ],
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    },
+	 "extra": {
+        "installer-paths": {
+            "www/core": ["type:drupal-core"],
+            "www/libraries/{$name}": ["type:drupal-library"],
+            "www/profiles/swingbase/modules/contrib/{$name}": ["type:drupal-module"]
+        },
+        "patches": {}
+    },
+}

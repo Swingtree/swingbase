@@ -59,3 +59,10 @@ fabric.properties
 .idea/
 
 # End of https://www.gitignore.io/api/phpstorm+all
+
+bin/
+www/
+vendor/
+node_modules/
+.sass-cache/
+console/cache/
