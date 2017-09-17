@@ -13,7 +13,7 @@
 	"require-dev":{},
     "require": {
 		"drupal/autologout":"~8.1.0",
-		"drupal-composer/drupal-scaffold": "^2.0.0",
+		"drupal-composer/drupal-scaffold": "^2.0.0"
 	},
 	"bin": [
       "swingbase-subprofile"
