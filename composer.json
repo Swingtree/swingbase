@@ -35,7 +35,8 @@
     ],
 	"scripts": {
         "post-install-cmd": [
-            "@composer drupal-scaffold"
+            "@composer drupal-scaffold",
+			"Swingbase\\Composer\\SwingbaseScripts::sitesDefaultFiles"
         ],
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     },
@@ -46,5 +47,10 @@
             "www/profiles/swingbase/modules/contrib/{$name}": ["type:drupal-module"]
         },
         "patches": {}
-    }
+    },
+	"autoload": {
+		"psr-4": {
+		  "Swingbase\\Composer\\": "src/Composer"
+		}
+	},
 }

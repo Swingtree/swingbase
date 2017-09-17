@@ -1,0 +1,17 @@
+# Local development services.
+#
+# To activate this feature, follow the instructions at the top of the
+# 'example.settings.local.php' file, which sits next to this file.
+parameters:
+# Display cache header in request
+  http.response.debug_cacheability_headers: true
+# Be sure to provide an easy working sheet for integration
+  twig.config:
+    debug: true
+    auto_reload: true
+    cache: false
+	
+services:
+# Do not use cache when local
+  cache.backend.null:
+    class: Drupal\Core\Cache\NullBackendFactory
