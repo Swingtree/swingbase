@@ -1,0 +1,13 @@
+name: "Content - Development Tools"
+description: 'A configuration starter-kit for sites that will have content'
+type: module
+core: 8.x
+dependencies:
+  - swb_content
+  - data_fixtures
+  - views_ui
+  - field_ui
+  - devel
+  - webprofiler
+version: 8.x-1.0
+package: 'Swingbase Features'

@@ -1,0 +1,3 @@
+services:
+  swb_content_development.swb_generator:
+    class: 'Drupal\swb_content_development\Services\SwbGenerator'

@@ -1,0 +1,10 @@
+name: 'Front Office - Development tools'
+description: 'Development tools for sites that will have front-office'
+type: module
+core: 8.x
+version: 8.x-1.0
+package: 'Swingbase Features'
+dependencies:
+  - menu_ui
+  - devel
+  - webprofiler

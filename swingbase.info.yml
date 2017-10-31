@@ -7,8 +7,6 @@ distribution:
   name: Swingbase
 dependencies:
   - config
-  - node
-  - block
   - dblog
   - page_cache
   - dynamic_page_cache

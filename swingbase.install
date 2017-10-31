@@ -1,0 +1,6 @@
+<?php
+
+function swingbase_install(){
+  // No user registration for default installation
+  \Drupal::configFactory()->getEditable('user.settings')->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
+}

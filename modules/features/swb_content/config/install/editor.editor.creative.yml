@@ -1,0 +1,80 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.creative
+  module:
+    - ckeditor
+format: creative
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Action
+          items:
+            - Undo
+            - Redo
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+            - '-'
+            - Outdent
+            - Indent
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+        -
+          name: Align
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - '-'
+            - JustifyBlock
+        -
+          name: Misc
+          items:
+            - HorizontalRule
+            - SpecialChar
+            - Table
+            - Language
+      -
+        -
+          name: Selectors
+          items:
+            - Format
+            - '-'
+            - Styles
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

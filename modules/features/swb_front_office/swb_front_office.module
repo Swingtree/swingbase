@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Provide template suggestion for error system pages
+ * @URL https://www.drupal.org/node/2363987
+ */
+function swb_front_office_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
+  $suggestions = theme_get_suggestions($path_args, 'page');
+  $http_error_suggestions = [
+    'system.401' => 'page__401',
+    'system.403' => 'page__403',
+    'system.404' => 'page__404',
+  ];
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (isset($http_error_suggestions[$route_name])) {
+    $suggestions[] = $http_error_suggestions[$route_name];
+  }
+  return $suggestions;
+}
+
+/**
+ * Provide interesting values for template
+ * @AS drupal/stem_theme
+ */
+function swb_front_office_preprocess_page(&$variables) {
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['copyright_date'] = date("Y");
+}
+
+/**
+ * Always add rel external to external links
+ */
+function swb_front_office_link_alter(&$variables) {
+  if( $variables['url']->isExternal() ){
+    $variables['options']['attributes']['rel'] = 'external';
+  }
+}

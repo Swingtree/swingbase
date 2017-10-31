@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Set adminimal as default administration theme
+ */
+function swb_back_office_install(){
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('system.theme')->set('admin', 'adminimal')->save();
+}
