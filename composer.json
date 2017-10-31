@@ -14,7 +14,7 @@
 	"require-dev":{},
     "require": {
 		"drupal-composer/drupal-scaffold": "^2.0.0",
-		"drupal/core": "^8.3",
+		"drupal/core": "~8.4",
         "drupal/autologout": "^1.0"
 	},
 	"bin": [
