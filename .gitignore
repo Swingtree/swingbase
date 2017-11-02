@@ -63,6 +63,7 @@ fabric.properties
 bin/
 www/
 vendor/
+themes/
 node_modules/
 .sass-cache/
 console/cache/
