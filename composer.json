@@ -20,7 +20,8 @@
         "drupal/paragraphs": "^1.2",
         "drupal/data_fixtures": "^1.0@RC",
         "drupal/devel": "^1.2",
-        "drupal/block_visibility_groups": "^1.1"
+        "drupal/block_visibility_groups": "^1.1",
+		"drupal/field_group": "^3.0"
 	},
 	"bin": [
       "swingbase-subprofile"

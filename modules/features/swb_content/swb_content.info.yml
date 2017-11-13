@@ -12,5 +12,6 @@ dependencies:
   - user
   - views
   - field
+  - field_group
 version: 8.x-1.0
 package: 'Swingbase Features'
