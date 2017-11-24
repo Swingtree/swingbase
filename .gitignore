@@ -64,6 +64,7 @@ bin/
 www/
 vendor/
 themes/
+sites/default/settings.local.php
 node_modules/
 .sass-cache/
 console/cache/
