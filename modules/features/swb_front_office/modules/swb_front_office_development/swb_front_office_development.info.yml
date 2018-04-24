@@ -7,4 +7,3 @@ package: 'Swingbase Features'
 dependencies:
   - menu_ui
   - devel
-  - webprofiler

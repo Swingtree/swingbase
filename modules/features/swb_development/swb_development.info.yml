@@ -1,4 +1,4 @@
-name: development
+name: Development
 description: 'The configuration starter kit for development'
 type: module
 core: 8.x
@@ -7,4 +7,3 @@ package: 'Swingbase Features'
 dependencies:
   - help
   - devel
-  - webprofiler

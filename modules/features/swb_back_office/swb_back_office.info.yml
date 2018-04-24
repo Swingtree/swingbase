@@ -5,6 +5,7 @@ core: 8.x
 version: 8.x-1.0
 package: 'Swingbase Features'
 dependencies:
+  - block
   - autologout
 themes:
   - adminimal_theme

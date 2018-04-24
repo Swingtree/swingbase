@@ -8,6 +8,5 @@ dependencies:
   - views_ui
   - field_ui
   - devel
-  - webprofiler
 version: 8.x-1.0
 package: 'Swingbase Features'
