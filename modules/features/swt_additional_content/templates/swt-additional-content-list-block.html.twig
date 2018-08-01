@@ -1,0 +1,8 @@
+<div class="additional-content__list">
+    {{ content }}
+</div>
+{% if readmore is defined and readmore is not null %}
+<div class="additional-content__readmore">
+    <a href="{{ readmore.url }}" class="readmore">{{ readmore.label }}</a>
+</div>
+{% endif %}

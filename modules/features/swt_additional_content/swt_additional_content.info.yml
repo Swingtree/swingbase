@@ -1,0 +1,13 @@
+name: Swingtree - Additional content
+type: module
+description: 'Provide common additional content and submodules'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingtree additional content'
+
+
+interface translation project: swt_additional_content
+interface translation server pattern: modules/custom/swt_additional_content/translations/swt_additional_content-%language.po
+
+dependencies:
+  - swb_content_development

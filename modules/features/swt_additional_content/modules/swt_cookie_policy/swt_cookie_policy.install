@@ -1,0 +1,11 @@
+<?php
+
+function swt_cookie_policy_install(){
+  /** @var \Drupal\swt_cookie_policy\FixturesGenerator\SwtCookiePolicyGenerator $generator */
+  $generator = \Drupal::service('swt_cookie_policy.generator');
+  try{
+    $generator->load();
+  }catch (Exception $exception){
+
+  }
+}

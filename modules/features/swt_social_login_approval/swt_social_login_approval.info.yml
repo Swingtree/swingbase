@@ -1,0 +1,9 @@
+name: Swingtree - Social Auth Approval
+type: module
+description: 'Do not require admin approval on social registered users'
+version: '8.x-1.0'
+core: '8.x'
+project: 'social_auth'
+
+dependencies:
+  - social_auth

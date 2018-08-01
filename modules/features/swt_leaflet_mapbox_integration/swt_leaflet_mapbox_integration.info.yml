@@ -1,0 +1,9 @@
+name: Swingtree - Mapbox Leaflet integration
+type: module
+description: 'Integration the mapbox plugin for leaflet'
+version: '8.x-1.0'
+core: '8.x'
+project: 'leaflet'
+
+dependencies:
+  - leaflet

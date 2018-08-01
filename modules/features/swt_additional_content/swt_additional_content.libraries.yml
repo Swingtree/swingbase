@@ -1,0 +1,16 @@
+swt_additional_content.fixed_toc:
+  version: VERSION
+  js:
+    js/swt_additional_content.fixed_toc.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+swt_additional_content.page_navigation:
+  version: VERSION
+  js:
+    js/swt_additional_content.page_navigation.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once

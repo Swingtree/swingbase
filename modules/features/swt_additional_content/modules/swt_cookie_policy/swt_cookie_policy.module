@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function swt_cookie_policy_theme($existing, $type, $theme, $path) {
+  return [
+    'swt_cookie_policy_alert'=>[
+      'variables'=>[
+        'content' => NULL,
+        'config' => NULL,
+        'more_url' => '',
+      ]
+    ],
+    'swt_cookie_policy_preferences'=>[
+      'variables'=>[]
+    ]
+  ];
+}

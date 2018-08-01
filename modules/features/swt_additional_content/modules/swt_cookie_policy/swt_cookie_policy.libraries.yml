@@ -1,0 +1,25 @@
+swt_cookie_policy.alert:
+  version: VERSION
+  js:
+    js/swt_cookie_policy.alert.js: { }
+  css:
+    theme:
+      css/swt_cookie_policy.alert.css: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.cookie
+
+swt_cookie_policy.preferences:
+  version: VERSION
+  js:
+    js/swt_cookie_policy.preferences.js: { }
+  css:
+    theme:
+      css/swt_cookie_policy.preferences.css: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.cookie

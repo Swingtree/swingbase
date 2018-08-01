@@ -1,0 +1,7 @@
+swt_homepage.index:
+  path: homepage
+  defaults:
+    _controller: 'Drupal\swt_homepage\Controller\SwtHomepageController::index'
+    _title: 'Home'
+  requirements:
+    _permission: 'access content'

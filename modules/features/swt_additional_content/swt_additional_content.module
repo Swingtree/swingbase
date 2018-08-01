@@ -1,0 +1,112 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_theme().
+ */
+function swt_additional_content_theme($existing, $type, $theme, $path) {
+  return [
+    'swt_additional_content_list_block' => [
+      'variables' => [
+        'content' => NULL,
+        'readmore' => NULL,
+      ]
+    ]
+  ];
+}
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ */
+function swt_additional_content_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  if( $variables['elements']['#node']->getType() === 'additional_content'){
+
+    $route = $variables['elements']['#node']->get('field_route')->value;
+    $routeParts = explode('.', $route );
+
+    $suggestion = 'node__additional_content__'.$variables['elements']['#view_mode'];
+    // For each part route, add a more specific template
+    foreach ($routeParts as $part){
+      // Do not compute chronological parts like .02. .05. .34.
+      if( !is_numeric($part) ){
+        $suggestion .= '__'.$part;
+        $suggestions[] = $suggestion;
+      }
+    }
+  }
+}
+
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ *
+ * @return array
+ */
+function swt_additional_content_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $route_defaults = \Drupal::routeMatch()->getRouteObject()->getDefaults();
+  if( !empty($route_defaults['_controller']) && $route_defaults['_controller'] === "Drupal\swt_additional_content\Controller\SwtAdditionalContentController::page"){
+
+    $suggestion = 'page__additional_content';
+    $route = $route_defaults['route'];
+
+    $routeParts = explode('.', $route );
+
+    // For each part route, add a more specific template
+    foreach ($routeParts as $part){
+      // Do not compute chronological parts like .02. .05. .34. nor '%'
+      if( !is_numeric($part) && $part !== '%'){
+        $suggestion .= '__'.$part;
+        $suggestions[] = $suggestion;
+      }
+    }
+
+  }
+  return $suggestions;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ *
+ * @param array $build
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+ * @param $view_mode
+ */
+function swt_additional_content_node_view( array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode ) {
+  if( $entity->bundle() === 'additional_content') {
+    if( $view_mode === 'full'){
+      $build['#attributes']['id'] = Html::getClass($entity->label());
+      $build['#attributes']['data-content-id'] = Html::getClass($entity->label());
+    }
+
+    // Add the route for each elements
+    $route = $entity->get('field_route')->value;
+    $routes = explode('.',$route);
+    $clean_routes = [];
+    foreach ($routes as $route){
+      if( !is_numeric($route)){
+        $clean_routes[] = $route;
+      }
+    }
+    $build['#routes'] = [
+      'raw' => $routes,
+      'safe' => $clean_routes
+    ];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function swt_additional_content_preprocess_html(&$variables) {
+  // Add the specified class for additional_content pages
+  $route_obj = \Drupal::routeMatch()->getRouteObject();
+  $defaults = $route_obj->getDefaults();
+  if( array_key_exists('_controller', $defaults) && $defaults['_controller'] === 'Drupal\swt_additional_content\Controller\SwtAdditionalContentController::page' ){
+    $variables['attributes']['class'][] = 'additional_content-page';
+    $variables['attributes']['class'][] = 'additional_content-page--'. Html::getClass(rtrim($defaults['route'],' %.'));
+  }
+}

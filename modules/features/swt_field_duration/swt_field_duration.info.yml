@@ -1,0 +1,9 @@
+name: Field Duration
+type: module
+description: 'Field Widget & Formatter for durations'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingbase Features'
+
+dependencies:
+  - field

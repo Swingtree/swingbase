@@ -1,0 +1,9 @@
+services:
+  path_processor.swt_mapbox_cache:
+    class: Drupal\swt_mapbox\PathProcessor\PathProcessorSwtMapboxCache
+    arguments: ['@stream_wrapper_manager']
+    tags:
+      - { name: path_processor_inbound, priority: 300 }
+
+  swt_mapbox.data:
+    class: Drupal\swt_mapbox\Service\SwtMapboxService

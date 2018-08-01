@@ -1,0 +1,10 @@
+name: SwingTree Mapbox
+type: module
+description: 'Tools for mapbox (formatter, widget, ...)'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingbase Features'
+
+dependencies:
+  - geofield
+  - field

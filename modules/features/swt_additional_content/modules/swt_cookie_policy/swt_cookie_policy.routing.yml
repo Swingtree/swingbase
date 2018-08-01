@@ -1,0 +1,16 @@
+swt_cookie_policy.info:
+  path: 'privacy'
+  defaults:
+    _controller: 'Drupal\swt_additional_content\Controller\SwtAdditionalContentController::page'
+    route: 'cookie_policy.%'
+    _title_callback: 'Drupal\swt_additional_content\Controller\SwtAdditionalContentController::pageTitle'
+  requirements:
+    _permission: 'access content'
+
+swt_cookie_policy.settings:
+  path: 'admin/config/swingtree/cookie-policy'
+  defaults:
+    _form: 'Drupal\swt_cookie_policy\Form\SwtCookiePolicyAlertSettingsForm'
+    _title: 'swt_cookie_policy.page.settings'
+  requirements:
+    _permission: 'administer swt_cookie_policy'

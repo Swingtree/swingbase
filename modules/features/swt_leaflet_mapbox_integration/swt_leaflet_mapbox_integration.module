@@ -1,0 +1,39 @@
+<?php
+
+
+/**
+ * Preprocess the leaflet_map theme function to add
+ * the mapbox libraries.
+ *
+ * @param  [type] &$vars [description]
+ * @return [type]        [description]
+ */
+function swt_leaflet_mapbox_integration_preprocess_leaflet_map(&$vars) {
+  // Each leaflet map will include mapbox library
+  $vars['#attached']['library'] = array(
+    'swt_leaflet_module_integration/mapbox-integration',
+  );
+  $i=2;
+  $vars['#attached']['drupalSettings']['swt_leaflet_mapbox_integration'] = [
+    'mapbox'=>[
+      'token' => \Drupal::config('swt_leaflet_mapbox_integration.settings')
+        ->get('token')
+    ],
+  ];
+}
+
+function swt_leaflet_mapbox_integration_preprocess($vars){
+  $i=2;
+}
+
+function swt_leaflet_mapbox_integration_page_attachments_alter(array &$attachments) {
+
+  $attachments['#attached']['library'][] = 'swt_leaflet_mapbox_integration/mapbox-integration';
+  $attachments['#attached']['drupalSettings']['swt_leaflet_mapbox_integration'] = [
+    'mapbox'=>[
+      'token' => \Drupal::config('swt_leaflet_mapbox_integration.settings')
+        ->get('token')
+    ],
+  ];
+  $i=2;
+}

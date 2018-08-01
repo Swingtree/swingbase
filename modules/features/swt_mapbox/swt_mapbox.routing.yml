@@ -1,0 +1,2 @@
+route_callbacks:
+  - '\Drupal\swt_mapbox\Routing\SwtMapboxRoutes::routes'

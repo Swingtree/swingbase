@@ -1,0 +1,9 @@
+name: Swingtree - Homepage
+type: module
+description: 'Provides a homepage controller'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingtree additional content'
+
+dependencies:
+  - swt_additional_content

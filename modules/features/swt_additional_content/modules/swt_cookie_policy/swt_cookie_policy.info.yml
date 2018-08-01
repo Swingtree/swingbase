@@ -1,0 +1,12 @@
+name: Swingtree - Cookie Policy
+type: module
+description: 'Cookie policy block, widgets and related content'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingtree additional content'
+
+interface translation project: swt_cookie_policy
+interface translation server pattern: modules/custom/swt_additional_content/modules/swt_cookie_policy/translations/swt_cookie_policy-%language.po
+
+dependencies:
+  - swt_additional_content

@@ -1,0 +1,6 @@
+services:
+  swt_cookie_policy.generator:
+    class: Drupal\swt_cookie_policy\FixturesGenerator\SwtCookiePolicyGenerator
+    arguments: ['@swb_content_development.swb_generator']
+    tags:
+      - { name: 'data_fixtures', priority: 100 }

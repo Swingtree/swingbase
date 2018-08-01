@@ -1,0 +1,253 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function swt_mapbox_theme($existing, $type, $theme, $path) {
+  return [
+    'swt_mapbox_formatter__static_image' => [
+      'variables' => [
+        'image_url' => NULL,
+        'parent_entity_type' => '',
+        'parent_entity_bundle' => ''
+      ],
+    ],
+  ];
+}
+
+
+/*******************************************************************************
+ * ALTERATIONS -----------------------------------------------------------------
+ ******************************************************************************/
+
+/**
+ * Retrieve all the mapbox styles option.
+ * Base + All modules alterations
+ *
+ * @return array|mixed
+ */
+function swt_mapbox_style_options() {
+
+  // Cache this as static so it is computed only one per request.
+  $styles = drupal_static(__FUNCTION__);
+
+  // Only compute if still empty;
+  if (empty($styles)) {
+    $styles = [
+      'mapbox.streets-v10' => 'Streets',
+      'mapbox.outdoors-v10' => 'Outdoor',
+      'mapbox.light-v9' => 'Light',
+      'mapbox.dark-v9' => 'Dark',
+      'mapbox.satellite-v9' => 'Satellite',
+      'mapbox.satellite-streets-v10' => 'Satellite Streets',
+      'mapbox.navigation-preview-day-v2' => 'Navigation Preview Day',
+      'mapbox.navigation-preview-night-v2' => 'Navigation Preview Night',
+      'mapbox.navigation-guidance-day-v2' => 'Navigation Guidance Day',
+      'mapbox.navigation-guidance-night-v2' => 'Navigation Guidance Night',
+    ];
+
+    // Allows other modules to add style options
+    \Drupal::moduleHandler()->alter('swt_mapbox_style_options', $styles);
+
+  }
+  return $styles;
+}
+
+/**
+ * Retrieve a list of all marker options
+ * Base + All module alterations
+ *
+ * @return array|mixed
+ */
+function swt_mapbox_marker_options() {
+  $pins = drupal_static(__FUNCTION__);
+  if (empty($pins)) {
+    $pins = [
+      'none' => 'None',
+      'pin-s' => 'Pin Small',
+      'pin-m' => 'Pin Medium',
+      'pin-l' => 'Pin Large',
+    ];
+
+    // Allows other modules to add style options
+    \Drupal::moduleHandler()->alter('swt_mapbox_marker_options', $pins);
+  }
+
+  return $pins;
+}
+
+function swt_mapbox_marker_label_options() {
+  return [
+    "" => "None",
+    "airfield" => "airfield",
+    "airport" => "airport",
+    "alcohol-shop" => "alcohol-shop",
+    "america-football" => "america-football",
+    "art-gallery" => "art-gallery",
+    "bakery" => "bakery",
+    "bank" => "bank",
+    "bar" => "bar",
+    "baseball" => "baseball",
+    "basketball" => "basketball",
+    "beer" => "beer",
+    "bicycle" => "bicycle",
+    "building" => "building",
+    "bus" => "bus",
+    "cafe" => "cafe",
+    "camera" => "camera",
+    "campsite" => "campsite",
+    "car" => "car",
+    "cemetery" => "cemetery",
+    "chemist" => "chemist",
+    "cinema" => "cinema",
+    "circle-stroked" => "circle-stroked",
+    "circle" => "circle",
+    "city" => "city",
+    "clothing-store" => "clothing-store",
+    "college" => "college",
+    "commercial" => "commercial",
+    "cricket" => "cricket",
+    "cross" => "cross",
+    "dam" => "dam",
+    "danger" => "danger",
+    "disability" => "disability",
+    "dog-park" => "dog-park",
+    "embassy" => "embassy",
+    "emergency-telephone" => "emergency-telephone",
+    "entrance" => "entrance",
+    "farm" => "farm",
+    "fast-food" => "fast-food",
+    "ferry" => "ferry",
+    "fire-station" => "fire-station",
+    "fuel" => "fuel",
+    "garden" => "garden",
+    "golf" => "golf",
+    "grocery" => "grocery",
+    "hairdresser" => "hairdresser",
+    "harbor" => "harbor",
+    "heart" => "heart",
+    "heliport" => "heliport",
+    "hospital" => "hospital",
+    "industrial" => "industrial",
+    "land-use" => "land-use",
+    "laundry" => "laundry",
+    "library" => "library",
+    "lighthouse" => "lighthouse",
+    "lodging" => "lodging",
+    "logging" => "logging",
+    "london-underground" => "london-underground",
+    "marker-stroked" => "marker-stroked",
+    "marker" => "marker",
+    "minefield" => "minefield",
+    "mobilephone" => "mobilephone",
+    "monument" => "monument",
+    "museum" => "museum",
+    "music" => "music",
+    "oil-well" => "oil-well",
+    "park2" => "park2",
+    "park" => "park",
+    "parking-garage" => "parking-garage",
+    "parking" => "parking",
+    "pharmacy" => "pharmacy",
+    "pitch" => "pitch",
+    "place-of-worship" => "place-of-worship",
+    "playground" => "playground",
+    "police" => "police",
+    "polling-place" => "polling-place",
+    "post" => "post",
+    "prison" => "prison",
+    "rail-above" => "rail-above",
+    "rail-light" => "rail-light",
+    "rail-metro" => "rail-metro",
+    "rail-underground" => "rail-underground",
+    "rail" => "rail",
+    "religious-christian" => "religious-christian",
+    "religious-jewish" => "religious-jewish",
+    "religious-muslim" => "religious-muslim",
+    "restaurant" => "restaurant",
+    "roadblock" => "roadblock",
+    "rocket" => "rocket",
+    "school" => "school",
+    "scooter" => "scooter",
+    "shop" => "shop",
+    "skiing" => "skiing",
+    "slaughterhouse" => "slaughterhouse",
+    "soccer" => "soccer",
+    "square-stroked" => "square-stroked",
+    "square" => "square",
+    "star-stroked" => "star-stroked",
+    "star" => "star",
+    "suitcase" => "suitcase",
+    "swimming" => "swimming",
+    "telephone" => "telephone",
+    "tennis" => "tennis",
+    "theatre" => "theatre",
+    "toilets" => "toilets",
+    "town-hall" => "town-hall",
+    "town" => "town",
+    "triangle-stroked" => "triangle-stroked",
+    "triangle" => "triangle",
+    "village" => "village",
+    "warehouse" => "warehouse",
+    "waste-basket" => "waste-basket",
+    "water" => "water",
+    "wetland" => "wetland",
+    "zoo" => "zoo",
+    "a" => "a",
+    "b" => "b",
+    "c" => "c",
+    "d" => "d",
+    "e" => "e",
+    "f" => "f",
+    "g" => "g",
+    "h" => "h",
+    "i" => "i",
+    "j" => "j",
+    "k" => "k",
+    "l" => "l",
+    "m" => "m",
+    "n" => "n",
+    "o" => "o",
+    "p" => "p",
+    "q" => "q",
+    "r" => "r",
+    "s" => "s",
+    "t" => "t",
+    "u" => "u",
+    "v" => "v",
+    "w" => "w",
+    "x" => "x",
+    "y" => "y",
+    "z" => "z",
+    "0" => "0",
+    "1" => "1",
+    "2" => "2",
+    "3" => "3",
+    "4" => "4",
+    "5" => "5",
+    "6" => "6",
+    "7" => "7",
+    "8" => "8",
+    "9" => "9",
+  ];
+}
+
+/**
+ * Retrieve a list of all marker color options
+ * Base + All module alterations
+ *
+ * @return array|mixed
+ */
+function swt_mapbox_marker_color_options() {
+  $colors = drupal_static(__FUNCTION__);
+  if (empty($colors)) {
+    $colors = [
+      'f3343d' => 'Default - Red',
+    ];
+
+    // Allows other modules to add style options
+    \Drupal::moduleHandler()->alter('swt_mapbox_marker_color_options', $colors);
+  }
+
+  return $colors;
+}

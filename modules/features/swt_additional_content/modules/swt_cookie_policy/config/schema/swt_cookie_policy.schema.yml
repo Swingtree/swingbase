@@ -1,0 +1,12 @@
+# Schema for the configuration files of the SWT Cookie Policy module.
+
+swt_cookie_policy.alert:
+  type: config_object
+  label: 'Cookie Policy Alert'
+  mapping:
+    accept_label:
+      type: label
+      label: 'Accept label'
+    more_label:
+      type: label
+      label: 'Readmore label'

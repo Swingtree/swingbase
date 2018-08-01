@@ -1,0 +1,7 @@
+swt_admin_language.settings:
+  path: '/admin/config/regional/language/detection/admin-language'
+  defaults:
+    _form: 'Drupal\swt_admin_language\Form\NegotiationAdminForm'
+    _title: 'Admin language detection configuration'
+  requirements:
+    _permission: 'administer languages'

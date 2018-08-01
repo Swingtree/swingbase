@@ -1,0 +1,7 @@
+swt_leaflet_mapbox_integration.settings:
+  path: '/admin/configuration/leaflet/swt-leaflet-mapbox-integration/settings'
+  defaults:
+    _form: '\Drupal\swt_leaflet_mapbox_integration\Form\SwtLeafletMapboxIntegrationSettings'
+    _title: 'Mapbox integration settings'
+  requirements:
+    _permission: 'administer site configuration'

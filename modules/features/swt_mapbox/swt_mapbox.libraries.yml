@@ -1,0 +1,11 @@
+swt_mapbox.core:
+  version: VERSION
+  css:
+    component:
+      css/mapbox-gl.css: {}
+  js:
+    js/mapbox-gl.js: {}
+    data/swt-mapbox-data-style.js: {}
+    js/swt-mapbox-tool.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,9 @@
+swt_webservices.admin:
+  title: 'Swingtree Webservices'
+  route_name: system.admin_config_development
+  parent: system.admin_config
+  description: 'Configure swingtree webservices'
+  weight: 10
+
+
+

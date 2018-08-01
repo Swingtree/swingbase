@@ -1,0 +1,6 @@
+swt_leaflet_mapbox_integration.settings:
+  type: config_object
+  mapping:
+    token:
+      type: string
+      label: 'The mapbox token'

@@ -1,0 +1,10 @@
+name: Administration Language EN Only
+type: module
+description: 'Force administration page to be displayed as English'
+version: '8.x-1.0'
+core: '8.x'
+package: 'Swingbase Features'
+
+dependencies:
+  - language
+  - content_translation

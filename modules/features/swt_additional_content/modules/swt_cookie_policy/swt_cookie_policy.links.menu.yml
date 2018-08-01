@@ -1,0 +1,13 @@
+swt_cookie_policy.info:
+  title: 'swt_cookie_policy.links.page'
+  route_name: swt_cookie_policy.info
+  weight: 10
+  menu_name: additional
+
+swt_cookie_policy.settings:
+  title: 'swt_cookie_policy.links.settings'
+  description: 'Configure Cookie policy settings'
+  parent: swt_additional_content.admin
+  route_name: swt_cookie_policy.settings
+
+

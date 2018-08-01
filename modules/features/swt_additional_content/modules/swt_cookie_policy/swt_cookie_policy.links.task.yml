@@ -1,0 +1,14 @@
+
+swt_cookie_policy.settings.alert:
+  title: 'Alert'
+  base_route: swt_cookie_policy.settings
+  route_name: swt_cookie_policy.settings.alert
+  weight: 0
+
+swt_cookie_policy.settings.page:
+  title: 'Page'
+  base_route: swt_cookie_policy.settings
+  route_name: swt_cookie_policy.settings.page
+  weight: 1
+
+

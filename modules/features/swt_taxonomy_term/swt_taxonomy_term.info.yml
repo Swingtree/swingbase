@@ -1,0 +1,9 @@
+name: Swingtree - Taxonomy Terms
+type: module
+description: 'Add some additionnal features on taxonomy term'
+version: '8.x-1.0'
+core: '8.x'
+project: 'swt_extra'
+
+dependencies:
+  - taxonomy

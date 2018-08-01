@@ -1,0 +1,9 @@
+swt_additional_content.admin:
+  title: 'Swingtree Additional content'
+  route_name: system.admin_config_development
+  parent: system.admin_config
+  description: 'Configure swingtree additional content'
+  weight: 10
+
+
+

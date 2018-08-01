@@ -1,0 +1,1 @@
+L.mapbox.accessToken = drupalSettings.swt_leaflet_mapbox_integration.mapbox.token;

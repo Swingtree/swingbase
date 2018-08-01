@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *  +form_user_form
+ *  +form_user_register_form
+ */
+function swt_admin_language_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id ) {
+  //If keys isset
+  if( array_key_exists('language',$form)){
+    if( array_key_exists('preferred_admin_langcode', $form['language']) ){
+      // Force english
+      $form['language']['preferred_admin_langcode']['#default_value'] = 'en';
+      // And remove user access to the field
+      $form['language']['preferred_admin_langcode']['#access'] = FALSE;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+administer swt_cookie_policy:
+  title: 'Administer Swingtree Cookie Policy'
+  restrict access: true

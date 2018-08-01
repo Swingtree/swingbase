@@ -1,0 +1,10 @@
+mapbox-integration:
+  version: VERSION
+  js:
+    lib/v3.1.1/mapbox.js: {}
+    js/authentication.js: {}
+  dependencies:
+    - leaflet/leaflet
+#  css:
+#    component:
+#      lib/v3.1.1/mapbox.css: {}

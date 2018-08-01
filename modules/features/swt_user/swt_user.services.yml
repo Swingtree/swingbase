@@ -1,0 +1,6 @@
+services:
+  swt_user.user_context:
+    class: Drupal\swt_user\ContextProvider\UserContext
+    arguments: ['@current_route_match']
+    tags:
+      - { name: 'context_provider' }

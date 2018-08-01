@@ -1,0 +1,6 @@
+name: Swingtree - Webservices
+type: module
+description: 'Add some helper and class for webservices'
+version: '8.x-1.0'
+core: '8.x'
+project: 'swt_extra'

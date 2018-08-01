@@ -1,0 +1,21 @@
+.block-swt-cookie-policy.block-swt-cookie-preferences{
+
+}
+.block-swt-cookie-policy.block-swt-cookie-preferences .cookie-policy__levels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.block-swt-cookie-policy.block-swt-cookie-preferences .cookie-policy__level {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.block-swt-cookie-policy.block-swt-cookie-preferences .cookie-policy__level:first-of-type {
+  text-align: left;
+}
+.block-swt-cookie-policy.block-swt-cookie-preferences .cookie-policy__level:last-of-type {
+  text-align: right;
+}

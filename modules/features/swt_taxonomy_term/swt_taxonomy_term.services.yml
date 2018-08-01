@@ -1,0 +1,6 @@
+services:
+  swt_taxonomy_term.taxonomy_term_context:
+    class: Drupal\swt_taxonomy_term\ContextProvider\TaxonomyTermContext
+    arguments: ['@current_route_match']
+    tags:
+      - { name: 'context_provider' }

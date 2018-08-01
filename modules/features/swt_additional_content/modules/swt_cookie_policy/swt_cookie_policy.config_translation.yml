@@ -1,0 +1,5 @@
+swt_cookie_policy.alert:
+  title: 'Cookie Policy Alert'
+  base_route_name: swt_cookie_policy.settings
+  names:
+    - swt_cookie_policy.alert
